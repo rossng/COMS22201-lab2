@@ -1,0 +1,42 @@
+name:                lab2
+version:             0.1.0.0
+synopsis:            Lab sheet 2 for TB2 COMS22201 at University of Bristol
+description:         Please see README.md
+homepage:            http://github.com/rossng/COMS22201-lab2
+license:             BSD3
+license-file:        LICENSE
+author:              Ross Gardiner
+maintainer:          ross-public@gmx.com
+copyright:           2016 Ross Gardiner
+category:            Web
+build-type:          Simple
+-- extra-source-files:
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     QuestionOne
+                     , QuestionTwo
+  build-depends:       base >= 4.7 && < 5
+  default-language:    Haskell2010
+
+executable lab2
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , lab2
+  default-language:    Haskell2010
+
+test-suite lab2-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+                     , lab2
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/rossng/COMS22201-lab2
